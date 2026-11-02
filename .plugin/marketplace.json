@@ -1,0 +1,13 @@
+{
+  "name": "ctrl-z",
+  "owner": {
+    "name": "Ctrl+Z"
+  },
+  "plugins": [
+    {
+      "name": "ctrl-z",
+      "source": "./",
+      "description": "Ctrl+Z for your whole project. Automatic undo snapshots for AI agents."
+    }
+  ]
+}

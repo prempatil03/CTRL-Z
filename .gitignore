@@ -1,0 +1,43 @@
+# Runtime / local only — never commit
+.ctrl-z/
+.ctrl-z/**
+*.broken
+repo.git.broken*
+
+# Dependencies & logs
+node_modules/
+npm-debug.log*
+yarn-error.log*
+*.log
+
+# Env / secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# OS / editor junk
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.swp
+*~
+
+# IDE local state (keep shared Cursor rules)
+.idea/
+.vscode/
+.cursor/*
+!.cursor/rules/
+!.cursor/rules/**
+
+# Test / bench scratch
+coverage/
+tmp/
+scratch/
+.temp/
+*.tmp
+
+# npm pack artifacts
+*.tgz
+.npm/

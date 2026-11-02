@@ -1,0 +1,9 @@
+{
+  "name": "ctrl-z",
+  "version": "0.1.0",
+  "description": "Ctrl+Z for your whole project — automatic snapshots before agent edits.",
+  "author": {
+    "name": "Ctrl+Z contributors"
+  },
+  "keywords": ["undo", "snapshot", "git", "safety"]
+}

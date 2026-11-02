@@ -1,0 +1,11 @@
+# Ctrl+Z
+
+Before large or destructive file changes, run:
+
+```bash
+npx ctrl-z snap -m "<what you are about to do>"
+```
+
+To undo: `npx ctrl-z list` then `npx ctrl-z restore 1 --yes`.
+
+Do not delete `.ctrl-z/`. Without hooks, you must snap explicitly — say so if asked.

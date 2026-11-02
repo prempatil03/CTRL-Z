@@ -1,0 +1,38 @@
+{
+  "name": "ctrl-z",
+  "version": "0.1.0",
+  "description": "Ctrl+Z for your whole project. Snapshots before AI agents go rogue.",
+  "type": "module",
+  "bin": {
+    "ctrl-z": "src/cli.js"
+  },
+  "main": "src/cli.js",
+  "scripts": {
+    "test": "node --test --test-concurrency=1 test/*.test.js",
+    "bench": "node scripts/bench.js",
+    "bench:quick": "node scripts/bench.js --quick",
+    "start": "node src/cli.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "undo",
+    "snapshot",
+    "ai",
+    "agent",
+    "git",
+    "ctrl-z"
+  ],
+  "license": "MIT",
+  "files": [
+    "src",
+    "hooks",
+    "commands",
+    "skills",
+    ".plugin",
+    "AGENTS.md",
+    ".cursor",
+    ".clinerules"
+  ]
+}

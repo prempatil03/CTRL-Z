@@ -1,0 +1,28 @@
+---
+description: Ctrl+Z project undo — snap before risky edits
+globs:
+alwaysApply: true
+---
+
+# Ctrl+Z
+
+Before large or destructive file changes, run a snapshot:
+
+```bash
+npx ctrl-z snap -m "<short description of upcoming change>"
+```
+
+If this repo is the Ctrl+Z source itself:
+
+```bash
+node src/cli.js snap -m "<short description>"
+```
+
+When the user wants to undo agent damage:
+
+1. `node src/cli.js list` (or `npx ctrl-z list`)
+2. `node src/cli.js restore 1 --yes`
+
+Do not delete `.ctrl-z/`. Do not claim files are unrecoverable without checking the snapshot list first.
+
+Note: Cursor does not auto-hook snapshots; you must snap explicitly. Claude Code with the plugin gets automatic snapshots.
