@@ -25,4 +25,4 @@ When the user wants to undo agent damage:
 
 Do not delete `.ctrl-z/`. Do not claim files are unrecoverable without checking the snapshot list first.
 
-Note: Cursor does not auto-hook snapshots; you must snap explicitly. Claude Code with the plugin gets automatic snapshots.
+Note: Cursor does not auto-hook snapshots; you must snap explicitly. Agents with the Ctrl+Z hooks plugin get automatic snapshots.

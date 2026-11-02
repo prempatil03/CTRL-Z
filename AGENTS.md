@@ -25,7 +25,7 @@ npx ctrl-z restore 1 --yes
 
 ## Important honesty
 
-- **Automatic snapshots** only exist when the host agent supports hooks (e.g. Claude Code with the Ctrl+Z plugin).
+- **Automatic snapshots** only exist when the host agent supports hooks and the Ctrl+Z plugin is installed.
 - In Cursor, Windsurf, Cline, Aider, and similar tools **without hooks**, you must call `snap` yourself before risky edits. Say so if the user asks.
 - Do not delete `.ctrl-z/`.
 - Cannot undo: network side effects, databases, or files outside the project / ignored secrets (`.env`).
