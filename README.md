@@ -1,27 +1,39 @@
-# Ctrl+Z
+<p align="center">
+  <img src="assets/ctrl-z-banner.svg" alt="Ctrl+Z — Undo for your whole project" width="100%" />
+</p>
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Node.js](https://img.shields.io/badge/node-%3E%3D18-brightgreen.svg)](package.json)
-[![GitHub](https://img.shields.io/badge/github-prempatil03%2FCTRL--Z-181717?logo=github)](https://github.com/prempatil03/CTRL-Z)
+<p align="center">
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-green?style=flat-square" alt="license MIT" /></a>
+  &nbsp;
+  <a href="package.json"><img src="https://img.shields.io/badge/node-%3E%3D18-brightgreen?style=flat-square" alt="node >= 18" /></a>
+  &nbsp;
+  <a href="https://github.com/prempatil03/CTRL-Z"><img src="https://img.shields.io/badge/local%20only-no%20upload-0e7490?style=flat-square" alt="local only" /></a>
+</p>
 
-**Ctrl+Z for your whole project.**
+<p align="center">
+  <strong>Ctrl+Z for your whole project.</strong><br/>
+  AI agents can edit or delete dozens of files in seconds.<br/>
+  Ctrl+Z snapshots first — one command puts everything back.<br/>
+  Works in any terminal. Your real git history stays untouched. Nothing is uploaded.
+</p>
 
-AI coding agents can edit or delete dozens of files in seconds. Ctrl+Z takes a local snapshot first, so one command puts the project back.
-
-```text
-$ ctrl-z restore
-Restored project to: "before Edit src/auth.js" (2 min ago)
-  - 3 files restored
-  - 1 file the agent created was removed
-```
-
-Works with **any terminal** and any AI agent. Your real git history is never touched. Nothing is uploaded.
+<p align="center">
+  <a href="#quick-start">Quick start</a>
+  &nbsp;·&nbsp;
+  <a href="#commands">Commands</a>
+  &nbsp;·&nbsp;
+  <a href="#how-it-works">How it works</a>
+  &nbsp;·&nbsp;
+  <a href="#use-with-ai-agents">Agents</a>
+  &nbsp;·&nbsp;
+  <a href="#faq">FAQ</a>
+</p>
 
 ---
 
 ## Quick start
 
-**Needs:** Node.js 18+ and `git` on your PATH. No npm dependencies.
+**Needs:** Node.js 18+ and `git` on your PATH. Zero npm dependencies.
 
 ```bash
 # from this repo
@@ -33,7 +45,7 @@ node src/cli.js list
 node src/cli.js restore 1 --yes
 ```
 
-After you publish to npm:
+After publish to npm:
 
 ```bash
 npx ctrl-z init
@@ -56,31 +68,27 @@ npx ctrl-z snap -m "starting point"
 | `ctrl-z off` / `on` | Disable / enable snapshots |
 | `ctrl-z reset --yes` | Delete `.ctrl-z/` entirely |
 
-**Useful flags:** `--dry-run` (with `restore`), `--yes` / `-y`, `--cwd <dir>`
+**Flags:** `--dry-run` (with `restore`), `--yes` / `-y`, `--cwd <dir>`
 
-Where your agent supports slash commands: `/undo`, `/undo-list`, `/undo-diff`, `/redo`, `/undo-status`, `/undo-clean`.
+Slash commands (where your agent supports them): `/undo`, `/undo-list`, `/undo-diff`, `/redo`, `/undo-status`, `/undo-clean`.
 
 ---
 
 ## How it works
 
-1. Snapshots are stored in a hidden **shadow git repo** at `.ctrl-z/repo.git` — separate from your real `.git`.
+1. Snapshots live in a hidden **shadow git repo** at `.ctrl-z/repo.git` — separate from your real `.git`.
 2. Unchanged trees are skipped (except a safety snap before every undo).
 3. Restore checks out that snapshot and removes files created after it.
 4. Junk is skipped: `node_modules`, build output, huge files, `.env`-style secrets.
 
 ```text
-  You / AI agent
-        │
-        ▼
-   ctrl-z CLI  ──►  .ctrl-z/ (local only)
-        │
-   snap · list · restore · redo
+$ ctrl-z restore
+Restored project to: "before Edit src/auth.js" (2 min ago)
+  - 3 files restored
+  - 1 file the agent created was removed
 ```
 
----
-
-## What it can and cannot undo
+### What it can and cannot undo
 
 | Can undo | Cannot undo |
 |---|---|
@@ -97,9 +105,9 @@ Where your agent supports slash commands: `/undo`, `/undo-list`, `/undo-diff`, `
 |---|---|
 | **Any terminal** | Manual — `ctrl-z snap` / `restore` |
 | **Agent with hooks** | Automatic — install the plugin in `.plugin/` |
-| **Cursor / Windsurf / Cline / Aider** | Rule-guided — copy `AGENTS.md` or the rule files; the agent should snap before risky edits |
+| **Cursor / Windsurf / Cline / Aider** | Rule-guided — copy `AGENTS.md` or the rule files |
 
-Rule-guided mode is weaker than hooks. Say so if users ask.
+Rule-guided mode is weaker than hooks — say so if users ask.
 
 ---
 
@@ -117,7 +125,7 @@ No — secrets and ignored files are skipped on purpose.
 **How do I configure it?**  
 Optional `.ctrl-z/config.json`: `maxFileBytes`, `keepCount`, `keepDays`, `maxStorageBytes`.
 
-Defaults: skip files over 5 MB; keep the last 50 snapshots or 7 days (union); warn/prune if storage exceeds 500 MB.
+Defaults: skip files over 5 MB; keep last 50 snapshots or 7 days (union); prune if storage exceeds 500 MB.
 
 ---
 
@@ -129,4 +137,4 @@ npm test
 npm run bench:quick
 ```
 
-MIT license — see [LICENSE](LICENSE).
+MIT — see [LICENSE](LICENSE).
