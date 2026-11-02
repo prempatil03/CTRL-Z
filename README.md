@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/ctrl-z-banner.svg" alt="Ctrl+Z — Undo for your whole project" width="100%" />
+  <img src="./assets/ctrl-z-banner.jpg" alt="Ctrl+Z — Undo for your whole project" width="100%" />
 </p>
 
 <p align="center">
